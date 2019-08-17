@@ -7,4 +7,4 @@ You need to extend the ``` BasicTaskDispatchPool ```and overwrite ```runTask``` 
 + getFinishedCallback : callback of all task finished
 + getItemTaskCallback : callback of item task job finished
 
-You can find detail in ```DemoAsyncPool``` , it will show you have to do .
+You can find detail in ```DemoAgit commit -m "first commit"syncPool``` , it will show you have to do .

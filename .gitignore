@@ -1,0 +1,8 @@
+.gradle/
+.idea/
+temp/
+out/
+build/
+gradle/
+temp-compare/
+out-test/
