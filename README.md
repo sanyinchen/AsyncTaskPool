@@ -1,5 +1,5 @@
 ## Describtion
-This is a simple therad pool manager . But it's very useful , you can add a new task job in dynamic to this manager and it will dispatch and schedue your task . It will create several threads (based on your cpu numer ) and every thread has a 10 tasks queue by default . 
+This is a simple therad pool manager . But it's very useful , you can add a new task job in dynamic to this manager and it will dispatch and schedue your task (support interrupt ) . It will create several threads (based on your cpu numer ) and every thread has a 10 tasks queue by default . 
 
 ## Work Flow 
 ![](https://github.com/sanyinchen/AsyncTaskPool/blob/master/doc/threadpool.png)
