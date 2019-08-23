@@ -19,14 +19,20 @@ public class DemoAsyncPool extends BasicTaskDispatchPool<DemoAsyncPool.InputArgs
 
     @Override
     protected Response runTask(InputArgs arg) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         // interrupt test
         if (Double.compare(Math.random(), 0.5f) < 0) {
-            Thread.currentThread().interrupt();
+           // Thread.currentThread().interrupt();
+            try {
+                Thread.sleep(600);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         return new Response(Thread.currentThread().toString());
 

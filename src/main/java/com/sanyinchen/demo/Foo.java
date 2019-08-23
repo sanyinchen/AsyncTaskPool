@@ -11,7 +11,7 @@ package com.sanyinchen.demo;
 public class Foo {
     public static void main(String[] args) {
         DemoAsyncPool demoAsyncPool = new DemoAsyncPool();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             demoAsyncPool.addTask(new DemoAsyncPool.InputArgs("job:" + i));
         }
     }

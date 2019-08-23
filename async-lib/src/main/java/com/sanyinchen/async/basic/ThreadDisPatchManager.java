@@ -55,7 +55,7 @@ public class ThreadDisPatchManager<T, O> {
      *
      * @return
      */
-    public int livingThreadSize() {
+    public synchronized int livingThreadSize() {
         int sum = 0;
         for (Thread thread : mThreadList) {
             if (thread.isAlive() && !thread.isInterrupted()) {
