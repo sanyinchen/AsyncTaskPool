@@ -13,7 +13,7 @@ import com.sun.istack.internal.NotNull;
  * @version v0.1
  * @since 19-3-23
  */
-public abstract class BasicTaskDispatchPool<T, O> {
+public abstract class BasicTaskDispatchPool<T, O> implements IThreadContainer {
 
 
     private static final int JOB_MAX_TASKS = 10;
@@ -80,4 +80,23 @@ public abstract class BasicTaskDispatchPool<T, O> {
     @NotNull
     protected abstract ThreadDisPatchManager.JobTaskFinished<T, O> getItemTaskCallback();
 
+    @Override
+    public int getMaxJobLimit() {
+        return mThreadPool.getMaxJobLimit();
+    }
+
+    @Override
+    public int getMaxThreadLimit() {
+        return mThreadPool.getMaxThreadLimit();
+    }
+
+    @Override
+    public int getBlockingJobs() {
+        return mThreadPool.getBlockingJobs();
+    }
+
+    @Override
+    public int getLivingThread() {
+        return mThreadPool.getLivingThread();
+    }
 }

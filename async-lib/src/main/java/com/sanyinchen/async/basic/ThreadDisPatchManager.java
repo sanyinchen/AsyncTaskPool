@@ -20,7 +20,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @version v0.1
  * @since 19-3-23
  */
-public class ThreadDisPatchManager<T, O> {
+public class ThreadDisPatchManager<T, O> implements IThreadContainer {
     private volatile int maxThread;
     private volatile int maxThreadJob;
     private volatile List<JobThread> mThreadList = new CopyOnWriteArrayList<>();
@@ -40,6 +40,26 @@ public class ThreadDisPatchManager<T, O> {
             // ignore
         }
     };
+
+    @Override
+    public int getMaxJobLimit() {
+        return maxThreadJob;
+    }
+
+    @Override
+    public int getMaxThreadLimit() {
+        return maxThread;
+    }
+
+    @Override
+    public int getBlockingJobs() {
+        return blockingJobs.size();
+    }
+
+    @Override
+    public int getLivingThread() {
+        return livingThreadSize();
+    }
 
 
     private static class InnerSingleQueueFinishIndicator extends Pair {

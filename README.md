@@ -114,3 +114,10 @@ public class Foo {
 ```
 ![](https://github.com/sanyinchen/AsyncTaskPool/blob/master/doc/console.png)
 
+### Support back pressure
+
+Test in BackPressureFoo
+
+```
+
+```
